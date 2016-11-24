@@ -1,0 +1,17 @@
+:global {
+  $rippleFX-final-opacity: 0;
+  @import "../src/style";
+  .testing {
+    background-color: tomato;
+    display: inline-block;
+    height: 300px;
+    width: 300px;
+  }
+  .testing2 {
+    @extend .testing;
+    transform: scale(0.5);
+  }
+  .ripple-fx {
+    background-color: blue;
+  }
+}
