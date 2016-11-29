@@ -9,8 +9,8 @@
     "serve": "node ./server.js"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/BernardoS/ripple-fx"
+    "type": "git",
+    "url": "https://github.com/BernardoS/ripple-fx"
   },
   "author": "Bernardo Sunderhus",
   "license": "ISC",
@@ -41,5 +41,6 @@
     "webpack-dev-server": "^1.15.0"
   },
   "dependencies": {
+    "classnames": "^2.2.5"
   }
 }

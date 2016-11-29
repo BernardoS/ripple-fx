@@ -9,7 +9,7 @@ module.exports = {
   context: path.join(__dirname, 'test'),
   entry: [
     'webpack-dev-server/client',
-    'webpack/hot/only-dev-server',
+    'webpack/hot/dev-server',
     './index.js'
   ],
   output: {
@@ -20,7 +20,7 @@ module.exports = {
   module: {
     loaders: [
       {test: /\.(scss|css)$/, exclude: /node_modules/, loader: 'style!css?modules&sourceMap&importLoaders=1&localIdentName=[name]_[local]_[hash:base64:5]!sass?outputStyle=expanded&sourceMap'},
-      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
+      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
       {test: /.json$/, loader: 'json'},
       {test: /\.(eot|svg|ttf|woff|woff2)$/, loader: 'file?name=fonts/[name].[ext]'}
     ]

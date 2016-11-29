@@ -1,17 +1,33 @@
 :global {
-  $rippleFX-final-opacity: 0;
-  @import "../src/style";
-  .testing {
+  * {
+    margin: 0;
+  }
+  .red-block {
+    &.relative {
+      // left: 301px;
+      position: relative;
+    }
+    &.absolute {
+      position: absolute;
+    }
+    &.fixed {
+      top: 301px;
+      position: fixed;
+    }
     background-color: tomato;
     display: inline-block;
     height: 300px;
     width: 300px;
   }
-  .testing2 {
-    @extend .testing;
-    transform: scale(0.5);
+  .teal-block {
+    background-color: teal;
+    height: 150px;
+    width: 150px;
   }
-  .ripple-fx {
+  .ripple {
+    @extend .blue;
+  }
+  .blue {
     background-color: blue;
   }
 }
