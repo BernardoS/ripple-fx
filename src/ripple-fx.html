@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<template>
+  <style>
+  span{
+    position: absolute;
+    user-select: none;
+    border-radius: 50%;
+  }
+  </style>
+  <span></span>
+</template>
+<script>
+const template = document.currentScript.ownerDocument.querySelector('template')
+customElements.define('ripple-fx', class extends HTMLElement {
+  constructor () {
+    super()
+    const root = this.createShadowRoot()
+    root.appendChild(document.importNode(template.content, true))
+  }
+})
+</script>

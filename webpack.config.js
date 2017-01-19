@@ -1,5 +1,4 @@
 const BellOnBundlerErrorPlugin = require('bell-on-bundler-error-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 const webpack = require('webpack')
 
@@ -14,11 +13,12 @@ module.exports = {
   ],
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name]-[hash].js',
+    filename: 'bundle.js',
     publicPath: '/'
   },
   module: {
     loaders: [
+      {test: /\.html$/, loader: 'file?name=templates/[name].[ext]!extract!html'},
       {test: /\.(scss|css)$/, exclude: /node_modules/, loader: 'style!css?modules&sourceMap&importLoaders=1&localIdentName=[name]_[local]_[hash:base64:5]!sass?outputStyle=expanded&sourceMap'},
       {test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
       {test: /.json$/, loader: 'json'},
@@ -27,11 +27,7 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new BellOnBundlerErrorPlugin(),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'test', 'index.html'),
-      inject: true
-    })
+    new BellOnBundlerErrorPlugin()
   ],
   devtool: 'cheap-module-eval-source-map',
   devServer: {

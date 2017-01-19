@@ -1,6 +1,5 @@
 import './testando.scss'
-import '../src'
-import {polyfill} from '../src/teste'
+import {polyfill} from '../src'
 polyfill()
 
 if (module.hot) module.hot.accept()

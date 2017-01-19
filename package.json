@@ -4,7 +4,7 @@
   "description": "nothing better to do",
   "main": "./server.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server --content-base test/",
     "build": "webpack --config webpack.production.config.js --progress -p",
     "serve": "node ./server.js"
   },
@@ -26,11 +26,14 @@
     "css-loader": "^0.23.1",
     "eslint": "^3.3.1",
     "eslint-config-standard": "^6.0.0",
+    "eslint-plugin-html": "^1.7.0",
     "eslint-plugin-promise": "^2.0.1",
     "eslint-plugin-standard": "^2.0.0",
     "express": "^4.14.0",
+    "extract-loader": "^0.1.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
+    "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.22.0",
     "node-sass": "^3.8.0",
     "path": "^0.12.7",

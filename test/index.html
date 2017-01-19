@@ -8,10 +8,35 @@
       rel="stylesheet">
   </head>
   <body>
+    <template>
+      <style>
+      span{
+        position: absolute;
+        user-select: none;
+        border-radius: 50%;
+      }
+      </style>
+      <button><slot></slot></button>
+    </template>
+    <script>
+    const template = document.querySelector('template')
+    customElements.define('md-button', class extends HTMLElement {
+      constructor () {
+        super()
+        const root = this.attachShadow({mode: 'open'})
+        root.appendChild(document.importNode(template.content, true))
+      }
+      attributeChangedCallback (attributeName, oldValue, newValue, namespace) {
+        console.log(this)
+      }
+    })
+    </script>
+    <md-button type="button" name="button">shadow</md-button>
     <div class="red-block relative" onclick="ripple(event, 'blue')"></div>
     <div class="red-block relative" onclick="ripple(event, 'blue')">
       <div class="teal-block"></div>
     </div>
     <div class="red-block relative" onclick="ripple(event, 'blue')"></div>
+    <!-- <script src="/bundle.js"></script> -->
   </body>
 </html>

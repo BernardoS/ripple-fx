@@ -1,12 +1,13 @@
 {
-    "extends": ["standard"],
-    "env": {
-        "browser": true,
-        "node": true
-    },
-    "parser": "babel-eslint",
-    "plugins": [
-        "standard",
-        "promise"
-    ]
+  "extends": ["standard"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "plugins": [
+    "standard",
+    "html",
+    "promise"
+  ]
 }
